@@ -1,734 +1,686 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>OMG</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu ❤️</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- FONT ANIME -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+        body {
+            font-family: 'Poppins', sans-serif;
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet" />
+            background:
+                linear-gradient(rgba(20, 0, 0, 0.7),
+                    rgba(20, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200');
+
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+
+            color: white;
+        }
+
+        /* HALAMAN */
+        .page {
+            min-height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* CARD */
+        .container {
+            width: 90%;
+            max-width: 850px;
+
+            background: rgba(25, 0, 0, 0.75);
+
+            border: 2px solid #ff2e63;
+
+            backdrop-filter: blur(10px);
+
+            padding: 35px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 0 20px rgba(255, 0, 80, 0.5),
+                0 0 50px rgba(255, 0, 80, 0.2);
+
+            text-align: center;
+
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 45px;
+
+            margin-bottom: 20px;
+
+            text-shadow: 0 0 10px rgba(255, 0, 80, 0.8);
+        }
+
+        h2 {
+            color: #ff8fa3;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        p {
+            color: #f5d7de;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* TOMBOL */
+        button {
+            margin-top: 20px;
+
+            padding: 14px 28px;
+
+            border: none;
+            border-radius: 50px;
+
+            background: linear-gradient(to right, #ff1744, #ff4d6d);
+
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow: 0 0 20px rgba(255, 0, 80, 0.5);
+        }
+
+        button:hover {
+            transform: scale(1.08);
+
+            box-shadow: 0 0 30px rgba(255, 0, 80, 0.8);
+        }
+
+        /* TOMBOL KABUR */
+        .runaway-btn {
+            position: absolute;
+            transition: 0.2s;
+        }
+
+        /* QUOTE */
+        .quote {
+            background: rgba(255, 0, 80, 0.15);
+
+            border: 1px solid #ff4d6d;
+
+            padding: 20px;
+            border-radius: 20px;
+
+            margin-bottom: 30px;
+
+            font-size: 20px;
+            color: #ffd6de;
+
+            font-weight: bold;
+        }
+
+        /* CARD ALASAN */
+        .reason-card {
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 77, 109, 0.3);
+
+            padding: 18px;
+
+            border-radius: 20px;
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+        }
+
+        .reason-card:hover {
+            transform: scale(1.03);
+
+            box-shadow: 0 0 20px rgba(255, 0, 80, 0.3);
+        }
+
+        /* ANIMASI */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* HATI */
+        .heart {
+            position: fixed;
+            top: -10px;
+
+            color: #ff4d6d;
+
+            animation: fall linear forwards;
+
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+
+        /* TEKS JEPANG */
+        .jp {
+            color: #ff8fa3;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* OVERLAY */
+        .love-overlay {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            background: rgba(0, 0, 0, 0.75);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            z-index: 99999;
+
+            backdrop-filter: blur(8px);
+
+            animation: fadeIn 0.4s ease;
+        }
+
+        .love-card {
+
+            position: relative;
+
+            width: 90%;
+            max-width: 650px;
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            background: rgba(25, 0, 0, 0.96);
+
+            border: 2px solid #ff4d6d;
+
+            border-radius: 30px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 30px rgba(255, 0, 80, 0.6),
+                0 0 80px rgba(255, 0, 80, 0.35);
+
+            backdrop-filter: blur(12px);
+
+            animation: popup 0.4s ease;
+
+            z-index: 100000;
+        }
+    </style>
 </head>
 
-<body class="index-page">
-  <header id="header" class="header d-flex flex-column justify-content-center">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+<body>
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li>
-          <a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a>
-        </li>
-        <li>
-          <a href="#Zona"><i class="bi bi-envelope navicon"></i><span>Zona</span></a>
-        </li>
-        <li>
-          <a href="#Manifesto"><i class="bi bi-file-earmark-code"></i><span>Manifesto</span></a>
-        </li>
-        <li>
-          <!-- <li>
-          <a href="#about"><i class="bi bi-person navicon"></i><span>Jejak</span></a>
-        </li>-->
-        <li>
-          <a href="#portfolio"><i class="bi bi-list-task"></i><span>Kegiatan</span></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <!-- HALAMAN PERTAMA -->
+    <div class="page active" id="page1">
 
-  <main class="main">
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-      <img src="assets\img\wallhaven-gp8gme_1920x1080.png" alt="" />
+        <div class="container">
 
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Void Space</h2>
-            <p>Empty, but never truly empty.</p>
-          </div>
+            <div class="jp">ねぇ... ❤️</div>
+
+            <h1>Hai Kamu</h1>
+
+            <p>
+                Ku tau cringe banget ini kak 😭<br><br>
+
+                Tapi aku bikinka sesuatu yang mungkin bisa hibur ki...<br>
+                jangan ki ketawa nah!!!
+            </p>
+
+            <br><br>
+
+            <h2>
+                Kamu siap belum buat tahu<br>
+                seberapa spesialnya kamu di mataku?
+            </h2>
+
+            <button onclick="nextPage()">
+                Masuk 💌
+            </button>
+
+            <button class="runaway-btn" id="noBtn">
+                Nggak 😭
+            </button>
+
         </div>
-      </div>
-    </section>
-    <!-- /Hero Section -->
 
-    <!-- Kedua -->
-    <section id="Zona" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Void Observation</h2>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center">
-
-          <!--<div class="col-lg-4">
-            <img src="assets/img/IMG_1670.jpg" class="img-fluid rounded">
-          </div>-->
-
-          <div class="col-lg-8 content">
-            <h2>Tujuan</h2>
-            <p>Mengungkap jejak tersembunyi yang tak kasat mata</p>
-            <h2>Waktu</h2>
-            <p>Jam Sapi</p>
-          </div>
-
-          <!-- Ketigas -->
-          <section id="Manifesto" class="about section">
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-              <h2>Void Space</h2>
-            </div>
-            <!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-              <div class="row align-items-center">
-
-                <!--<div class="col-lg-4">
-            <img src="assets/img/IMG_1670.jpg" class="img-fluid rounded">
-          </div>-->
-
-                <div class="col-lg-8 content">
-                  <h2>Visi</h2>
-                  <p>“Menjadi entitas yang mampu membaca kehampaan, mengungkap apa yang tersembunyi di balik ketiadaan,
-                    serta membangun kesadaran bahwa ruang kosong bukanlah akhir—melainkan awal dari ancaman yang tak
-                    terlihat.”</p>
-                  <h2>Misi</h2>
-                  <p>Menjelajahi ruang digital yang sunyi untuk mengidentifikasi jejak-jejak yang sengaja disembunyikan
-                    Mengembangkan sistem pertahanan yang mampu merespons ancaman dari sumber yang tidak terdeteksi
-                    Mengungkap pola dalam kekosongan data yang tampak normal namun menyimpan anomali
-                    Membangun kesadaran akan keberadaan ancaman yang bergerak tanpa bentuk dan tanpa suara
-                    Menciptakan mekanisme adaptif yang tetap siaga bahkan ketika sistem tampak “aman”</p>
-                </div>
-
-
-                <!-- Keempat -->
-                <div class="container section-title" data-aos="fade-up">
-                  <h2>Entitas</h2>
-                </div>
-                <!-- End Section Title -->
-
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                  <div class="row align-items-center">
-
-                    <div class="col-lg-4">
-                      <img src="assets/img/download.jpeg" class="img-fluid rounded">
-                    </div>
-
-                    <div class="col-lg-8 content">
-                      <h2>Hai,</h2>
-                      <p>“Melihat yang tak terlihat. Memahami yang tersembunyi.”</p>
-                    </div>
-
-                  </div>
-                </div>
-                <!-- /About Section -->
-          </section>
-
-          <!-- Portfolio Section -->
-          <section id="portfolio" class="portfolio section">
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-              <h2>Ritual</h2>
-            </div>
-            <!-- End Section Title -->
-            <div class="container">
-              <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                <!--<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">Semua</li>
-            <li data-filter=".filter-KM">Kampus Mengajar</li>
-            <li data-filter=".filter-Kepanitiaan">Kepanitiaan</li>
-            <li data-filter=".filter-luar">Luar Kampus</li>
-            <li data-filter=".filter-magang">Magang</li>
-          </ul>
-          <!-- End Portfolio Filters -->
-
-                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-4dz3mm_1920x1080.png" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Silent Intrusion</h4>
-
-                      <a href="assets\img\wallhaven-4dz3mm_1920x1080.png"
-                        title="Tahapan masuk tanpa suara ke dalam ruang yang tak terjaga, guna memahami apa yang tersembunyi tanpa mengubah keseimbangannya."
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-4v21o8_1920x1080.png" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Deep Signal</h4>
-
-                      <a href="assets\img\wallhaven-4v21o8_1920x1080.png"
-                        title="Penelusuran sinyal-sinyal samar yang muncul dari kehampaan, mengurai pola yang tidak disadari keberadaannya."
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-4vgx25_1920x1080.png" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Shadow Mapping</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> -->
-                      <a href="assets\img\wallhaven-4vgx25_1920x1080.png"
-                        title="Pemetaan bayangan dari sesuatu yang tidak terlihat, untuk membentuk gambaran dari apa yang sebenarnya ada."
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-g81l3e_1920x1080.png" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Null Phase</h4>
-
-                      <a href="assets\img\wallhaven-g81l3e_1920x1080.png"
-                        title="Fase ketika segala sesuatu tampak berhenti, namun justru menjadi titik di mana perubahan mulai terbentuk."
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-mdxvx1_1920x1080.png" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Echo Tracing</h4>
-
-                      <a href="assets\img\wallhaven-mdxvx1_1920x1080.png"
-                        title="Mengikuti gema yang tertinggal, menelusuri asal-usul dari sesuatu yang telah berlalu namun belum benar-benar hilang."
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets\img\wallhaven-nzpeg4_1920x1080.png" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Final Awakening</h4>
-
-                      <a href="assets\img\wallhaven-nzpeg4_1920x1080.png"
-                        title="Tahap akhir di mana semua yang tersembunyi mulai terungkap, dan kehampaan tidak lagi benar-benar kosong."
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets/img/7 Oktober (Melakukan Asistensi Mengajar di Kelas 4) (1).jpg" class="img-fluid"
-                      alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/7 Oktober (Melakukan Asistensi Mengajar di Kelas 4) (1).jpg"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets/img/14 Oktober (Pelaksanaan Asistensi Mengajar) (1).png" class="img-fluid"
-                      alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/14 Oktober (Pelaksanaan Asistensi Mengajar) (1).png"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets/img/14 Oktober (Pelaksanaan Asistensi Mengajar).png" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/14 Oktober (Pelaksanaan Asistensi Mengajar).png"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img
-                      src="assets/img/15 November_ Pelaksanaan Sosialisasi 3 Dosa Besar pendidikan dan Sosialisasi Geber.jpg"
-                      class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/15 November_ Pelaksanaan Sosialisasi 3 Dosa Besar pendidikan dan Sosialisasi Geber.jpg"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img
-                      src="assets/img/15 November_ Pelaksanaan Sosialisasi 3 Dosa Besar pendidikan dan Sosialisasi Geber1.jpg"
-                      class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/15 November_ Pelaksanaan Sosialisasi 3 Dosa Besar pendidikan dan Sosialisasi Geber1.jpg"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img src="assets/img/20_Persiapan Mading.jpg" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kampus Mengajar</h4>
-
-                      <a href="assets/img/20_Persiapan Mading.jpg"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-KM">
-                    <img
-                      src="assets/img/28 Oktober (Festival Pemuda_ Membangun Generasi Berkarakter dengan Literasi, Numerasi, dan Profil Pelajar Pancasila).jpg"
-                      class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Sertifikat Kampus Mengajar</h4>
-
-                      <a href="assets/img/28 Oktober (Festival Pemuda_ Membangun Generasi Berkarakter dengan Literasi, Numerasi, dan Profil Pelajar Pancasila).jpg"
-                        title="Sertifikat sebagai bukti telah menyelesaikan program kampus mengajar"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/2.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <a href="assets/img/2.JPG"
-                        title="Menjadi pemandu ice breaking pada hari perayaan Ulang Tahun Jurusan Ice Fest 2024"
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/10.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-
-                      <a href="assets/img/10.JPG"
-                        title="Menjadi MC pertandingan pada pertandingan badminton pada acara kampus Ice Sport 2024"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/1.jpg" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p>
-                      <a href="assets/img/1.jpg" title="Menjadi MC pada saat pembukaan acara jurusan Ice Sport 2024"
-                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/9.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p>
-                      <a href="assets/img/9.JPG" title="Menjadi MC untuk penutupan acara jurusan Ice Sport 2024"
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/8.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/8.JPG" title="Menjadi Dirigen untuk Pembukaan acara bersama PERMIKOMNAS"
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/4.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/4.JPG" title="Mengikuti Lomba Ice Sport 2024"
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/6.JPG" class="img-fluid" alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/6.JPG" title="Menjadi Panitia Divisi Acara di kepanitian Ice Fest 2024"
-                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Kepanitiaan">
-                    <img src="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.42.47_cc78a804.jpg" class="img-fluid"
-                      alt="" />
-                    <div class="portfolio-info">
-                      <h4>Kepanitiaan</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.42.47_cc78a804.jpg"
-                        title="Menjadi Steering Commite pad iCE sPORT 2025" data-gallery="portfolio-gallery-product"
-                        class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-magang">
-                    <img src="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.02.14_2027d650.jpg" class="img-fluid"
-                      alt="vsga" />
-                    <div class="portfolio-info">
-                      <h4>Magang Mandiri di PT DIGITAL DESA</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.02.14_2027d650.jpg"
-                        title="Mengikuti program magang mandiri yang diadakan Universitas di PT DIGITAL DESA"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-magang">
-                    <img src="assets/img/DSC05761-1.JPG" class="img-fluid" alt="vsga" />
-                    <div class="portfolio-info">
-                      <h4>Magang Mandiri di PT DIGITAL DEASA</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/DSC05761-1.JPG"
-                        title="Mengikuti program magang mandiri yang diadakan Universitas di PT DIGITAL DESA"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-magang">
-                    <img src="assets/img/IMG-20241212-WA0002.jpg" class="img-fluid" alt="vsga" />
-                    <div class="portfolio-info">
-                      <h4>Praktik Industri</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p>
-                      <a href="assets/img/IMG-20241212-WA0002.jpg"
-                        title="Mengikuti program kegiatan Praktik Industri yang diadakan Universitas di Dinas Kominfo dan Persandian Kabupaten Bulukumba"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-magang">
-                    <img src="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.02.15_c6606502.jpg" class="img-fluid"
-                      alt="vsga" />
-                    <div class="portfolio-info">
-                      <h4>Praktik Industri</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/Gambar WhatsApp 2025-09-22 pukul 19.02.15_c6606502.jpg"
-                        title="Mengikuti program kegiatan Praktik Industri yang diadakan Universitas di Dinas Kominfo dan Persandian Kabupaten Bulukumba"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-luar">
-                    <img src="assets/img/lw.png" class="img-fluid" alt="vsga" />
-                    <div class="portfolio-info">
-                      <h4>VSGA Kominfo</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p> 
-                      <a href="assets/img/lw.png" title="Mengikuti kegiatan yang diadakan oleh Kominfo"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-luar">
-                    <img src="assets/img/IMG20240927091050.jpg" class="img-fluid" alt="Luas" />
-                    <div class="portfolio-info">
-                      <h4>Seminar Hasil Kajian Museum Kota Makassar</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p>
-                      <a href="assets/img/IMG20240927091050.jpg"
-                        title="Mengikuti kegiatan seminar hasil kajian koleksi museum Kota Makassar"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <!--<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-luar">
-                    <img src="assets/img/Screenshot 2025-09-22 190810.png" class="img-fluid" alt="Luas" />
-                    <div class="portfolio-info">
-                      <h4>Juara 2 GORONTALO CREATIVITY COMPETITION IT 2025 UI/UX</h4>
-                      <!-- <p>Lorem ipsum, dolor sit</p>
-                      <a href="assets/img/Screenshot 2025-09-22 190810.png"
-                        title="Mengikuti Lomba GORONTALO CREATIVITY COMPETITION IT 2025 yang diadakan oleh UNG pada cabang Lomba UI/UX"
-                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                          class="bi bi-zoom-in"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-                </div>
-                <!-- End Portfolio Container -->
-              </div>
-            </div>
-          </section>
-          <!-- /Portfolio Section -->
-
-          <!-- Services Section -->
-          <!--<section id="services" class="services section">
-            <!-- Section Title -->
-          <!--  <div class="container section-title" data-aos="fade-up">
-              <h2>PROJECT</h2>
-            </div>
-            <!-- End Section Title -->
-
-          <!--  <div class="container">
-              <div class="row gy-4">
-                <!-- Service Item 1 -->
-          <!--  <div data-aos="fade-up" data-aos-delay="100">
-                  <div class="service-item item-cyan position-relative">
-                    <!-- Gambar di sebelah kiri -->
-          <!--  <div class="service-image">
-                      <img src="assets/img/user4.png" alt="Muara" />
-                    </div>
-
-                    <!-- Teks di sebelah kanan -->
-          <!--<div class="service-text">
-                      <h2>MUARA</h2>
-                      <h3>Full-Stack Developer</h3>
-                      <p>MUARA (Muna Barat Satisfaction Survey System) merupakan sistem informasi pengisian survei
-                        kepuasan
-                        masyarakat mengenai pelayanan Direktorat Jenderal Kependudukan dan Pencatatan Sipil Kabupaten
-                        Muna
-                        Barat.</p>
-
-                      <!-- Tombol ke link -->
-          <!--    <a href="https://www.figma.com/design/s9LQsysZoWNFptuEUtSjeb/Untitled?node-id=4-226&t=2e6rhY39HJaJmaaz-1"
-                        target="_blank" class="btn btn-primary">View</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Service Item -->
-
-          <!-- Service Item 2 -->
-          <!--  <div data-aos="fade-up" data-aos-delay="200">
-                  <div class="service-item item-orange position-relative">
-                    <!-- Gambar di sebelah kiri -->
-          <!--  <div class="service-image">
-                      <img src="assets/img/LoginMobie.png" alt="Muslim Tracker" />
-                    </div>
-
-                    <!-- Teks di sebelah kanan -->
-          <!--<div class="service-text">
-                      <h2>MUSLIM TRACKER</h2>
-                      <h3>UI/UX Desain</h3>
-                      <p>Muslim Tracker merupakan aplikasi yang bisa digunakan untuk mentracker ibadah seseorang secara
-                        anonim
-                      </p>
-
-                      <!-- Tombol ke link -->
-          <!--   <a href="https://www.figma.com/design/UyZ6htfVip6QiBVIuJAgQr/Muslim-Tracker?node-id=280-33&t=ZTwN4GKn8f0ncn4R-1"
-                        target="_blank" class="btn btn-primary">View</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Service Item -->
-
-          <!-- Service Item 3 -->
-          <!--  <div data-aos="fade-up" data-aos-delay="300">
-                  <div class="service-item item-teal position-relative">
-                    <!-- Gambar di sebelah kiri -->
-          <!--   <div class="service-image">
-                      <img src="assets/img/HOME.png" alt="Gambar Project 3" />
-                    </div>
-
-                    <!-- Teks di sebelah kanan -->
-          <!--   <div class="service-text">
-                      <h2>BLOODSTREAM</h2>
-                      <h2>UI/UX Desain</h2>
-                      <p>Blood Stream adalah aplikasi yang dirancang untuk memudahkan pencarian donor darah dengan cepat
-                        dan
-                        efisien. Aplikasi ini membantu pengguna menemukan lokasi pendonoran darah terdekat serta
-                        menghubungkan
-                        mereka dengan pendonor yang tersedia, sehingga dapat mempercepat proses penyelamatan nyawa bagi
-                        yang
-                        membutuhkan.</p>
-
-                      <!-- Tombol ke link -->
-          <!--    <a href="https://www.figma.com/design/zNhEBInMXlWZybjJWxsI1a/Halaman-Login-dan-Registrasi-(Community)?node-id=0-1t=Q9mvD7XP99dqrEGX-1"
-                        target="_blank" class="btn btn-primary">View</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Service Item 4 -->
-          <!--  <div data-aos="fade-up" data-aos-delay="300">
-                  <div class="service-item item-teal position-relative">
-                    <!-- Gambar di sebelah kiri -->
-          <!--   <div class="service-image">
-                      <img src="assets/img/Screenshot 2025-02-02 101015.png" alt="Gambar Project 4" />
-                    </div>
-
-                    <!-- Teks di sebelah kanan -->
-          <!--    <div class="service-text">
-                      <h2>KLASIFIKASI TINGKAT KESEGARAN DAUN BAWANG MENGGUNAKAN JARINGAN SYARAF TIRUAN BERBASIS
-                        PENGOLAHAN
-                        CITRA DIGITAL</h2>
-                      <p>Klasifikasi Tingkat Kesegarann Daun Bawang menggunakan Jaringan Syaraf Tiruan berbasis
-                        Pengolahan
-                        Citra Digital merupakan artikel ilmiah berbasis pengolahan citra digital dan sudah terindeks
-                        sinta 3
-                      </p>
-
-                      <!-- Tombol ke link -->
-          <!--     <a href="https://ejournal.lppm-unbaja.ac.id/index.php/jsii/article/view/3378/1701" target="_blank"
-                        class="btn btn-primary">View</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Service Item 5 -->
-          <!--  <div data-aos="fade-up" data-aos-delay="300">
-                  <div class="service-item item-teal position-relative">
-                    <!-- Gambar di sebelah kiri -->
-          <!--   <div class="service-image">
-                      <img src="assets/img/Screenshot (3105).png" alt="Gambar Project 5" />
-                    </div>
-
-                    <!-- Teks di sebelah kanan -->
-          <!--    <div class="service-text">
-                      <h2>silapNON</h2>
-                      <h3>Full-Stack Developer</h3>
-                      <p>silapNON (Sistem Laporan Non ASN) merupakan aplikasi berbasis website yang digunakan untuk para
-                        Non
-                        ASN di Dinas Kominfo dan Persandian Kabupaten Bulukumba untuk mengisi laporan kegiatannya.</p>
-
-                      <!-- Tombol ke link -->
-          <!--     <a href="https://ejournal.lppm-unbaja.ac.id/index.php/jsii/article/view/3378/1701" target="_blank"
-                        class="btn btn-primary">View</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- End Service Item -->
-        </div>
-      </div>
-      <!-- End Container -->
-    </section>
-    <!-- /Services Section -->
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <img src="assets/img/dda63bf3-1938-4168-9f52-ee82c0894170.png" class="img-fluid" alt="" />
-      <!--   <h3 class="sitename">bhj</h3>
-      <p>信者だけが読める</p>   -->
-      <div class="social-links d-flex justify-content-center">
-        <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
-        <a href="https://web.facebook.com/AndiFitriNov" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/aftt.na0813/" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/nopiiiiiy" target="_blank"><i class="bi bi-twitter"></i></a>
-        <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Portfolionya</span> <strong class="px-1 sitename">Fitrii</strong> <span>Istrinya Jaemin</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade and ChatGPT</a>
-        </div>
-      </div>
     </div>
-  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <!-- HALAMAN KEDUA -->
+    <div class="page" id="page2">
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+        <div class="container">
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+            <h1>Beberapa Alasan Aku Suka Kamu ❤️</h1>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+            <div class="quote">
+                “Kamu itu berharga. Bahkan saat kamu nggak sadar kalau kamu seberharga itu.”
+            </div>
+
+            <div id="reasons"></div>
+
+            <button onclick="showLove()">
+                Klik Ini ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // PINDAH HALAMAN
+        function nextPage() {
+
+            document.getElementById("page1")
+                .classList.remove("active");
+
+            document.getElementById("page2")
+                .classList.add("active");
+        }
+
+        // TOMBOL KABUR
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", () => {
+
+            const x = Math.random() *
+                (window.innerWidth - 120);
+
+            const y = Math.random() *
+                (window.innerHeight - 50);
+
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+
+        // ALASAN
+        const reasons = [
+
+            "Karena kamu hadir dengan cara yang nggak dibuat-buat.",
+            "Karena chat sederhana dari kamu bisa bikin hariku berubah.",
+            "Karena kamu punya cara ngobrol yang bikin nyaman.",
+            "Karena kamu selalu terasa dekat meski cuma lewat layar.",
+            "Karena kamu bikin percakapan kecil terasa berarti.",
+            "Karena aku suka cara kamu membalas dengan santai.",
+            "Karena aku suka energi yang kamu bawa.",
+            "Karena kamu bikin aku betah ngobrol lama.",
+            "Karena kamu punya aura yang susah dijelaskan.",
+            "Karena aku merasa didengar saat ngobrol sama kamu.",
+            "Karena kamu nggak bikin aku merasa mengganggu.",
+            "Karena kamu tetap membalas walau larut malam.",
+            "Karena perhatian kecilmu terasa besar.",
+            "Karena aku suka cara kamu mengetik.",
+            "Karena aku suka candaan random kamu.",
+            "Karena kamu bisa bikin aku senyum sendiri.",
+            "Karena kamu bikin hari biasa terasa spesial.",
+            "Karena aku selalu penasaran sama kabarmu.",
+            "Karena kamu punya sisi hangat.",
+            "Karena aku nyaman jadi diri sendiri di dekat kamu.",
+            "Karena kamu nggak memaksa jadi sempurna.",
+            "Karena kamu punya cara unik memperhatikan orang.",
+            "Karena kamu bikin suasana jadi hidup.",
+            "Karena aku suka cara kamu merespons perhatian.",
+            "Karena kamu punya hati yang lembut.",
+            "Karena kamu terlihat tulus.",
+            "Karena aku suka waktu kamu mencari aku duluan.",
+            "Karena kamu bikin aku merasa dianggap.",
+            "Karena kamu nggak dingin.",
+            "Karena kamu nggak fake.",
+            "Karena kehadiranmu bikin tenang.",
+            "Karena kamu bikin aku merasa aman.",
+            "Karena aku suka caramu bercanda.",
+            "Karena aku suka cara kamu peduli.",
+            "Karena kamu punya vibe yang bikin candu.",
+            "Karena aku selalu menunggu balasanmu.",
+            "Karena kamu bikin aku merasa spesial tanpa harus bilang.",
+            "Karena kamu bisa bikin aku ketawa di saat random.",
+            "Karena kamu tetap jadi diri sendiri.",
+            "Karena kamu nggak berlebihan.",
+            "Karena aku suka suara tawamu.",
+            "Karena aku suka caramu menanggapi hal kecil.",
+            "Karena kamu punya energi yang menenangkan.",
+            "Karena aku merasa nyaman cerita ke kamu.",
+            "Karena kamu terasa tulus.",
+            "Karena kamu nggak pernah terasa membosankan.",
+            "Karena kamu bisa bikin suasana ringan.",
+            "Karena aku suka waktu kamu perhatian.",
+            "Karena kamu nggak bikin aku capek secara emosional.",
+            "Karena kamu punya cara sendiri membuat orang nyaman.",
+            "Karena kamu itu rumah dalam bentuk manusia.",
+            "Karena aku merasa dicari saat kamu chat duluan.",
+            "Karena aku suka cara kamu menyapa.",
+            "Karena aku suka hal-hal kecil tentang kamu.",
+            "Karena kamu membuat malam terasa lebih hangat.",
+            "Karena aku suka saat kamu random.",
+            "Karena kamu bikin aku merasa penting.",
+            "Karena aku suka saat kamu terbuka.",
+            "Karena kamu membuat obrolan sederhana jadi menyenangkan.",
+            "Karena kamu punya sisi lucu yang natural.",
+            "Karena aku suka melihat semangatmu.",
+            "Karena kamu punya hati yang baik.",
+            "Karena kamu nggak jaim berlebihan.",
+            "Karena kamu membuat aku ingin jadi lebih baik.",
+            "Karena kamu terasa nyata.",
+            "Karena aku suka perhatian kecilmu.",
+            "Karena kamu bisa membuat aku lupa capek.",
+            "Karena kamu bikin aku merasa ditemani.",
+            "Karena kamu nggak bikin aku merasa sendirian.",
+            "Karena kamu selalu punya cara membuat aku tersenyum.",
+            "Karena aku suka saat kamu penasaran tentang aku.",
+            "Karena kamu punya cara unik menunjukkan perhatian.",
+            "Karena kamu membuat aku menunggu notifikasi.",
+            "Karena aku suka cara kamu hadir.",
+            "Karena aku suka cara kamu bertanya.",
+            "Karena kamu memberi rasa tenang.",
+            "Karena aku merasa nyaman diam bareng kamu.",
+            "Karena kamu bisa jadi tempat pulang.",
+            "Karena kamu bikin aku merasa diterima.",
+            "Karena kamu punya energi yang hangat.",
+            "Karena kamu nggak bikin aku takut jadi diri sendiri.",
+            "Karena aku suka caramu memperhatikan detail.",
+            "Karena kamu nggak pernah terasa palsu.",
+            "Karena aku suka saat kamu peduli.",
+            "Karena kamu punya cara bikin hati tenang.",
+            "Karena aku suka waktu kamu ngajak ngobrol.",
+            "Karena kamu punya ketulusan.",
+            "Karena kamu bikin aku merasa cukup.",
+            "Karena aku suka bagaimana kamu membuat obrolan hidup.",
+            "Karena kamu membuat aku ingin bertahan.",
+            "Karena aku suka sisi randommu.",
+            "Karena kamu terasa spesial.",
+            "Karena kamu bikin aku merasa dipahami.",
+            "Karena aku suka saat kamu hadir di waktu yang tepat.",
+            "Karena kamu punya vibe yang susah dicari.",
+            "Karena aku suka waktu kamu perhatian diam-diam.",
+            "Karena kamu punya sisi lembut yang indah.",
+            "Karena kamu membuat aku merasa berarti.",
+            "Karena aku suka semua versi dirimu.",
+            "Karena menjadi dekat denganmu terasa menyenangkan.",
+            "Karena kamu layak disayangi.",
+            "Karena kamu punya hati yang luas.",
+            "Karena kamu pantas mendapatkan kebahagiaan.",
+            "Karena kamu berharga bahkan saat kamu merasa tidak.",
+            "Karena keberadaanmu punya arti.",
+            "Karena kamu memberi dampak baik ke orang lain.",
+            "Karena cara kamu hadir bikin nyaman.",
+            "Karena kamu pantas didengarkan.",
+            "Karena kamu pantas dicintai dengan tulus.",
+            "Karena kamu bikin dunia orang lain lebih hangat.",
+            "Karena kamu punya sisi kuat.",
+            "Karena kamu tetap bertahan sejauh ini.",
+            "Karena kamu sudah melewati banyak hal.",
+            "Karena kamu masih bisa tersenyum.",
+            "Karena kamu tetap mencoba.",
+            "Karena kamu punya hati yang baik.",
+            "Karena kamu nggak sadar seberharga itu.",
+            "Karena kamu membawa ketenangan.",
+            "Karena orang merasa nyaman di dekatmu.",
+            "Karena kamu punya cara membuat orang merasa diterima.",
+            "Karena kamu penting.",
+            "Karena kamu berarti.",
+            "Karena kamu nggak tergantikan.",
+            "Karena kamu punya cara sendiri mencintai.",
+            "Karena kamu membuat hal kecil jadi indah.",
+            "Karena kamu layak diprioritaskan.",
+            "Karena kamu pantas mendapatkan perhatian.",
+            "Karena kamu pantas mendapatkan cinta yang lembut.",
+            "Karena kamu punya nilai lebih dari yang kamu kira.",
+            "Karena kamu punya jiwa yang hangat.",
+            "Karena keberadaanmu bikin dunia lebih ramai.",
+            "Karena kamu membuat hari orang lain lebih baik.",
+            "Karena senyummu punya efek besar.",
+            "Karena kamu membawa rasa aman.",
+            "Karena kamu bikin orang nyaman jadi diri sendiri.",
+            "Karena kamu punya ketulusan langka.",
+            "Karena kamu tetap baik meski capek.",
+            "Karena kamu tetap peduli.",
+            "Karena kamu masih punya harapan.",
+            "Karena kamu pantas dicintai tanpa syarat.",
+            "Karena aku suka cara kamu bertahan.",
+            "Karena aku suka cara kamu menjalani hidup.",
+            "Karena kamu mengajarkan arti perhatian kecil.",
+            "Karena kamu membuat aku percaya lagi pada kedekatan.",
+            "Karena kamu membawa rasa tenang di kepala yang ribut.",
+            "Karena kamu bikin aku nyaman tanpa perlu banyak alasan.",
+            "Karena kamu punya cara unik bikin aku ketawa.",
+            "Karena kamu membuat aku merasa dicintai bahkan tanpa status.",
+            "Karena aku suka caramu hadir perlahan.",
+            "Karena kamu bikin aku ingin mengenalmu lebih lama.",
+            "Karena aku suka cara kamu mengetik namaku.",
+            "Karena aku suka bagaimana kamu menanggapi chat randomku.",
+            "Karena kamu nggak pernah terasa asing.",
+            "Karena aku suka waktu kamu cerita.",
+            "Karena aku suka mendengar hal-hal kecil tentang harimu.",
+            "Karena kamu bikin aku penasaran terus.",
+            "Karena kamu punya sisi manis yang natural.",
+            "Karena kamu bikin aku ingin menjaga kamu.",
+            "Karena aku suka saat kamu terbuka soal hal kecil.",
+            "Karena kamu bikin aku merasa punya tempat.",
+            "Karena aku suka bagaimana kamu membuat malam tidak sepi.",
+            "Karena kamu memberi rasa hangat bahkan lewat teks.",
+            "Karena aku suka energi tenangmu.",
+            "Karena kamu punya aura nyaman.",
+            "Karena kamu bikin aku ingin bertahan lebih lama di percakapan.",
+            "Karena aku suka bagaimana kamu mendengarkan.",
+            "Karena kamu punya hati yang lembut.",
+            "Karena aku suka perhatian randommu.",
+            "Karena kamu membuat aku merasa dipilih.",
+            "Karena kamu selalu berhasil bikin aku senyum.",
+            "Karena kamu bukan cuma menarik, tapi juga menenangkan.",
+            "Karena kamu punya cara bicara yang bikin nyaman.",
+            "Karena aku suka semua sisi kecilmu.",
+            "Karena kamu tetap menjadi dirimu sendiri.",
+            "Karena kamu nggak perlu jadi sempurna untuk berarti.",
+            "Karena kamu punya cara hadir yang beda.",
+            "Karena kamu bikin aku merasa cukup.",
+            "Karena aku suka bagaimana kamu peduli.",
+            "Karena kamu punya sisi hangat yang jarang dimiliki orang.",
+            "Karena aku suka waktu kamu tetap tinggal di percakapan.",
+            "Karena kamu layak mendapatkan seseorang yang tulus.",
+            "Karena kamu pantas dicintai dengan tenang.",
+            "Karena kamu pantas mendapatkan perhatian sederhana.",
+            "Karena kamu pantas didampingi saat capek.",
+            "Karena kamu pantas dipeluk saat dunia berat.",
+            "Karena kamu pantas mendapatkan rumah dalam bentuk seseorang.",
+            "Karena kamu pantas merasa aman.",
+            "Karena kamu pantas didengar tanpa dihakimi.",
+            "Karena kamu pantas bahagia.",
+            "Karena kamu lebih berharga daripada yang kamu pikir.",
+            "Karena aku suka kamu apa adanya.",
+            "Karena kamu bikin aku merasa hidup.",
+            "Karena aku suka saat kamu muncul tiba-tiba.",
+            "Karena kamu membuat notifikasi terasa spesial.",
+            "Karena kamu punya energi yang bikin nagih.",
+            "Karena aku suka cara kamu membuat aku nyaman.",
+            "Karena kamu terasa tulus.",
+            "Karena kamu punya sisi manis tanpa sadar.",
+            "Karena aku suka setiap momen ngobrol sama kamu.",
+            "Karena kamu berharga, bahkan tanpa harus membuktikan apa pun.",
+
+        ];
+
+        const reasonContainer =
+            document.getElementById("reasons");
+
+        reasons.forEach((reason, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className = "reason-card";
+
+            card.innerHTML = `
+                <h3 style="color:#ff4d6d;">
+                    #${index + 1}
+                </h3>
+
+                <p>${reason}</p>
+            `;
+
+            reasonContainer.appendChild(card);
+
+        });
+
+        // CARD LOVE
+        function showLove() {
+
+            document.body.style.overflow = "hidden";
+
+            const loveCard = document.createElement("div");
+
+            loveCard.innerHTML = `
+    
+        <div class="love-overlay">
+
+            <div class="love-card">
+
+                <h1>❤️ Untuk Kamu ❤️</h1>
+
+                <p>
+    Aku tahu rasanya lagi nggak enak...<br><br>
+
+    Dan jujur, aku mungkin bukan orang yang paling jago buat ngasih hiburan 😭<br>
+    Aku juga nggak selalu tahu harus ngomong apa biar kamu ngerasa lebih baik.<br><br>
+
+    Tapi kalau boleh jujur...<br>
+    aku cuma nggak suka lihat kamu sedih.<br><br>
+
+    Move on itu nggak gampang.<br>
+    Apalagi kalau yang dilepas pernah jadi rumah buat hati sendiri.<br><br>
+
+    Jadi nggak apa-apa kalau sekarang kamu masih sakit,<br>
+    masih kepikiran,<br>
+    masih belum benar-benar bisa lupa.<br><br>
+
+    Kamu nggak harus buru-buru kuat cuma karena orang lain bilang “udah waktunya move on”.<br><br>
+
+    Pelan-pelan aja ya?<br>
+    Satu hari jelek bukan berarti hidup kamu bakal jelek terus.<br><br>
+
+    Dan tolong ingat ini...<br><br>
+
+    Kehilangan seseorang bukan berarti kamu kehilangan nilai dirimu juga.<br><br>
+
+    Kamu tetap orang yang hangat.<br>
+    Tetap berharga.<br>
+    Tetap layak dicintai dengan tulus.<br><br>
+
+    Kalau suatu hari nanti hati kamu capek lagi,<br>
+    setidaknya jangan dipendam sendirian ya.<br><br>
+
+    Aku mungkin nggak selalu punya solusi,<br>
+    tapi aku bisa nemenin 💌
+</p>
+
+                <button onclick="closeLoveCard()">
+                    Tutup ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+            document.body.appendChild(loveCard);
+
+        }
+
+        // TUTUP CARD
+        function closeLoveCard() {
+
+            document.body.style.overflow = "auto";
+
+            const overlay =
+                document.querySelector(".love-overlay");
+
+            overlay.remove();
+
+        }
+
+        // HATI JATUH
+        setInterval(() => {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("heart");
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                Math.random() * window.innerWidth + "px";
+
+            heart.style.fontSize =
+                Math.random() * 20 + 15 + "px";
+
+            heart.style.animationDuration =
+                Math.random() * 3 + 2 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 5000);
+
+        }, 300);
+
+    </script>
+
 </body>
 
 </html>
